@@ -13,7 +13,7 @@ function App() {
     setLoading(true);
     setError("");
     setQuizStarted(false); // Reset quiz on level change
-    fetch(`https://word-backend-black.vercel.app`)
+    fetch(`https://word-backend-black.vercel.app/api/word?level=${level}`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to fetch data");
         return res.json();
